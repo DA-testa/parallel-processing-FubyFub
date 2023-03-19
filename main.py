@@ -21,7 +21,7 @@ def main():
     n, m = map( int, input().split() )
     
     data = []
-    data = ( list( map( int, input().split) ))
+    data =  list( map( int, input().split() ))
 
     result = parallel_processing(n,m,data)
     
