@@ -7,21 +7,17 @@ def parallel_processing(n, m, data):
     
     for i in range( m ):
         
-        cont, time = min( thread, key = lambda x: x[ 1 ])
-        output.append(( cont, time))
-        thread[ cont ] =( cont,  data[ i ] + time )
+        cont = min( thread )
+        thread[ cont[ 1 ]] = ( cont[ 0 ] + data[ i ], cont[ 1 ] )
+        output.append(( cont[ 1 ], cont[ 0 ]))
         
     return output
 
 def main():
     
-    n = 0
-    m = 0
-
     n, m = map( int, input().split() )
     
-    data = []
-    data =  list( map( int, input().split() ))
+    data =  list( map( int, input().split()) )
 
     result = parallel_processing(n,m,data)
     
