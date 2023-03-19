@@ -9,7 +9,7 @@ def parallel_processing(n, m, data):
         
         cont, time = min( thread, key = lambda x: x[ 1 ])
         output.append(( cont, time))
-        thread[ cont ] =(cont + data[ i ] + time )
+        thread[ cont ] =( cont,  data[ i ] + time )
         
     return output
 
